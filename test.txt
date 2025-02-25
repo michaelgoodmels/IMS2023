@@ -1,6 +1,13 @@
 guten morgen ims2023
+<<<<<<< HEAD
+ICh bin andi aziri
+=======
 ich bin michael good
 
 ich bin yasin onmaz
+<<<<<<< HEAD
 
 ich bin luca burger
+=======
+>>>>>>> 8035a3dad0496b98475b094f426eaae4cad33d4b
+>>>>>>> ad79293f2073ac65523eccf6aea28f5a77d60843
