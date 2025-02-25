@@ -11,8 +11,5 @@
 # Start                 ./hello.sh
 #-------------------------------------------------
 
-# Get the hostname of the PC
-hostname=$(cat /etc/hostname)
-
 # Greet the user
-echo "Hello, welcome $hostname! This is a message from Luca Burger."
+echo "Hello, welcome $USER! This is a message from Luca Burger."
