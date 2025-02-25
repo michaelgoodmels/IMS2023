@@ -1,12 +1,19 @@
 guten morgen ims2023
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Ich bin niki krinninger
 =======
 ICh bin andi aziri
 >>>>>>> d7753bb252ff6e697cb41a9e8ad65621de16e996
 =======
+=======
+
+ICh bin andi aziri
+
+>>>>>>> 928412cae856859a08cf66ffe9f7a79b9aab416b
 ich bin michael good
 
 ich bin yasin onmaz
->>>>>>> 8035a3dad0496b98475b094f426eaae4cad33d4b
+
+ich bin luca burger
