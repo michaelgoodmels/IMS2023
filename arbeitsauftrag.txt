@@ -1,0 +1,31 @@
+Hallo IMS2023
+
+Bei mir hat nun der Branch auf meiner Workstation auch funktioniert. Nun sind jedoch noch nicht alle auf dem Testfile notiert. Darf ich euch höflich bitten, dies noch nachzuholen.
+
+Anbei die Befehle:
+
+Online muss Github offen und eingeloggt sein!
+
+1. SSH-Schlüssel erstellen:
+   ```bash
+   ssh-keygen -t rsa -b 4096 -C "deine_email@example.com"
+   
+2. SSH-Agent starten:
+   ```bash
+   eval "$(ssh-agent -s)"
+
+3. Schlüssel zum Agenten hinzufügen:
+   ```bash
+   ssh-add ~/.ssh/id_rsa
+
+4. Öffentlichen Schlüssel anzeigen und kopieren:
+   ```bash
+   cat ~/.ssh/id_rsa.pub
+
+5. SSH-Verbindung testen:
+   ```bash
+   ssh -T git@github.com
+
+Viel Erfolg wünscht
+
+Michael Good
