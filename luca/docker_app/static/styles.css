@@ -1,0 +1,63 @@
+/* Custom Styles */
+body {
+  background-color: #f8f9fa; /* Light background for better contrast */
+  font-family: "Arial", sans-serif; /* Font style */
+}
+
+.container {
+  max-width: 800px; /* Increased max width for larger screens */
+  margin: auto; /* Center the container */
+  padding: 20px; /* Padding around the container */
+}
+
+h1 {
+  color: #343a40; /* Darker color for the heading */
+  margin-bottom: 30px; /* Space below the heading */
+}
+
+.card {
+  border-radius: 10px; /* Rounded corners for cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-bottom: 20px; /* Space between cards */
+}
+
+.card-title {
+  color: #007bff; /* Bootstrap primary color for titles */
+  font-weight: bold; /* Bold titles */
+}
+
+.form-control {
+  border-radius: 5px; /* Rounded corners for input fields */
+  border: 1px solid #ced4da; /* Light border color */
+  transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.form-control:focus {
+  border-color: #007bff; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add shadow on focus */
+}
+
+button {
+  border-radius: 5px; /* Rounded corners for buttons */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition for background color */
+}
+
+button:hover {
+  transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.alert {
+  border-radius: 5px; /* Rounded corners for alerts */
+  margin-top: 10px; /* Space above alerts */
+}
+
+/* Responsive Styles */
+@media (max-width: 576px) {
+  .container {
+    padding: 10px; /* Less padding on small screens */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Smaller heading on small screens */
+  }
+}

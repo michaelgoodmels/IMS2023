@@ -1,53 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
     <title>Flask Docker App</title>
-</head>
-<body>
-    <div class="container">
-        <h1>Welcome to the Flask Docker App!</h1>
-        <form id="greetForm">
-            <input type="text" id="name" placeholder="Enter your name" required>
-            <button type="submit">Greet Me!</button>
-        </form>
-        <div id="greeting"></div>
-        <form id="addForm">
-            <input type="number" id="a" placeholder="Number A" required>
-            <input type="number" id="b" placeholder="Number B" required>
-            <button type="submit">Add Numbers</button>
-        </form>
-        <div id="result"></div>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center">Welcome to the Flask Docker App!</h1>
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">Greet Me</h5>
+          <form id="greetForm" class="mb-3">
+            <div class="form-group">
+              <input
+                type="text"
+                id="name"
+                class="form-control"
+                placeholder="Enter your name"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Greet Me!</button>
+          </form>
+          <div
+            id="greeting"
+            class="alert alert-info"
+            style="display: none"
+          ></div>
+        </div>
+      </div>
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">Add Numbers</h5>
+          <form id="addForm" class="mb-3">
+            <div class="form-group">
+              <input
+                type="number"
+                id="a"
+                class="form-control"
+                placeholder="Number A"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="number"
+                id="b"
+                class="form-control"
+                placeholder="Number B"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-success">Add Numbers</button>
+          </form>
+          <div
+            id="result"
+            class="alert alert-success"
+            style="display: none"
+          ></div>
+        </div>
+      </div>
     </div>
     <script>
-        document.getElementById('greetForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            fetch(`/greet/${name}`)
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('greeting').innerText = data.message;
-                });
+      document
+        .getElementById("greetForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const name = document.getElementById("name").value;
+          fetch(`/greet/${name}`)
+            .then((response) => response.json())
+            .then((data) => {
+              const greetingDiv = document.getElementById("greeting");
+              greetingDiv.innerText = data.message;
+              greetingDiv.style.display = "block";
+            });
         });
 
-        document.getElementById('addForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const a = parseInt(document.getElementById('a').value);
-            const b = parseInt(document.getElementById('b').value);
-            fetch('/add', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ a, b })
-            })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('result').innerText = `Result: ${data.result}`;
+      document
+        .getElementById("addForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const a = parseInt(document.getElementById("a").value);
+          const b = parseInt(document.getElementById("b").value);
+          fetch("/add", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ a, b }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              const resultDiv = document.getElementById("result");
+              resultDiv.innerText = `Result: ${data.result}`;
+              resultDiv.style.display = "block";
             });
         });
     </script>
-</body>
+  </body>
 </html>
