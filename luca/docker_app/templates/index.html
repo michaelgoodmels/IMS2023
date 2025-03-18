@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Flask Docker App</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Flask Docker App!</h1>
+        <form id="greetForm">
+            <input type="text" id="name" placeholder="Enter your name" required>
+            <button type="submit">Greet Me!</button>
+        </form>
+        <div id="greeting"></div>
+        <form id="addForm">
+            <input type="number" id="a" placeholder="Number A" required>
+            <input type="number" id="b" placeholder="Number B" required>
+            <button type="submit">Add Numbers</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script>
+        document.getElementById('greetForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            fetch(`/greet/${name}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('greeting').innerText = data.message;
+                });
+        });
+
+        document.getElementById('addForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const a = parseInt(document.getElementById('a').value);
+            const b = parseInt(document.getElementById('b').value);
+            fetch('/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ a, b })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerText = `Result: ${data.result}`;
+            });
+        });
+    </script>
+</body>
+</html>
