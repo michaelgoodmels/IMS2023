@@ -1,3 +1,4 @@
 vorname name adresse nummer plz ort land phone e-mail
 michael good mühlesteinweg 2 8887 mels schweiz michael.good@outlook.com 079 578 74 14
 luca burger Fakestrasse 1234 0001 Musterhausen schweiz info@photofuel.tech 012 345 67 89
+andrin schöb erlen 17a 9473 gams schweiz andrin.schoeb@stud.kantisargans.ch 079 831 78 16
